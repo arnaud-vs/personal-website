@@ -4,16 +4,22 @@ import { GraduationCap } from "lucide-react";
 const Education = () => {
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "University of Technology",
-      period: "2015 - 2017",
-      description: "Specialized in Software Engineering and Distributed Systems"
+      degree: "Master of Artificial Intelligence",
+      school: "KU Leuven, Belgium",
+      period: "2024 - 2025",
+      description: "Magna cum laude (84.3%)"
     },
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "State University",
-      period: "2011 - 2015",
-      description: "Dean's List, Graduated with Honors"
+      degree: "Master of Engineering: Energy",
+      school: "KU Leuven, Belgium",
+      period: "2022 - 2024",
+      description: "Magna cum laude (77.2%) - Including exchange semester at École Polytechnique de Montréal"
+    },
+    {
+      degree: "Bachelor of Engineering: Electromechanics",
+      school: "KU Leuven, Belgium",
+      period: "2019 - 2022",
+      description: "Cum laude (69.9%)"
     }
   ];
 

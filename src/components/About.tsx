@@ -5,18 +5,18 @@ const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable, and well-documented code"
+      title: "Machine Learning",
+      description: "Developing advanced forecasting models and AI solutions"
     },
     {
       icon: Palette,
-      title: "Design-Focused",
-      description: "Creating beautiful, intuitive user experiences"
+      title: "Energy Systems",
+      description: "Optimizing energy consumption and renewable energy yield"
     },
     {
       icon: Rocket,
-      title: "Performance",
-      description: "Optimizing for speed, efficiency, and scalability"
+      title: "Research",
+      description: "Publishing findings at international conferences"
     }
   ];
 
@@ -33,10 +33,9 @@ const About = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
               <p className="text-foreground/80 leading-relaxed">
-                With over 8 years of experience in software development, I've had the privilege 
-                of working with startups and established companies alike. My journey has taken me 
-                from frontend development to full-stack engineering, allowing me to build 
-                comprehensive solutions that delight users and drive business value.
+                I'm an engineer with a unique blend of expertise in Artificial Intelligence and Energy Systems. 
+                I recently completed my Master's in AI at KU Leuven (Magna cum laude, 84.3%) after earning my 
+                Master's in Energy Engineering, including an exchange semester at École Polytechnique de Montréal.
               </p>
             </CardContent>
           </Card>
@@ -45,10 +44,9 @@ const About = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-4">What I Do</h3>
               <p className="text-foreground/80 leading-relaxed">
-                I specialize in building modern web applications using React, TypeScript, and Node.js. 
-                I'm passionate about creating accessible, performant, and beautiful digital experiences. 
-                When I'm not coding, you'll find me contributing to open-source projects or mentoring 
-                aspiring developers.
+                My work focuses on applying machine learning and AI to solve real-world energy challenges. 
+                At ELECTA research group, I developed an imbalance price forecast that improved upon Elia's model by 13%, 
+                and presented my research at the International Ruhr Energy Conference in Germany.
               </p>
             </CardContent>
           </Card>

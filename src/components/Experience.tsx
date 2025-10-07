@@ -4,22 +4,22 @@ import { Briefcase } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
-      description: "Leading a team of 5 developers building scalable web applications. Architected and implemented microservices infrastructure, reducing deployment time by 60%."
+      title: "Researcher",
+      company: "ELECTA, KU Leuven",
+      period: "July - September 2025",
+      description: "Developed an imbalance price forecast based on machine learning, improving Elia's attempt by 13%. Presented research at the International Ruhr Energy Conference in Essen, Germany."
     },
     {
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Co.",
-      period: "2019 - 2021",
-      description: "Developed and maintained multiple client projects using React and Node.js. Improved application performance by 40% through optimization and best practices."
+      title: "AI Intern",
+      company: "ENERSEE, Brussels",
+      period: "August 2024",
+      description: "Leveraged generative AI to explain technical software output to energy managers. Improved machine learning algorithm calculating the energy yield of PV panels."
     },
     {
-      title: "Frontend Developer",
-      company: "Creative Studio",
-      period: "2017 - 2019",
-      description: "Created responsive web applications and landing pages. Collaborated with designers to implement pixel-perfect UI components."
+      title: "BI Intern",
+      company: "KATOEN NATIE, Antwerp",
+      period: "August 2023",
+      description: "Created a business intelligence dashboard that summarizes customer satisfaction surveys for a multinational logistics company."
     }
   ];
 

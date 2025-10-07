@@ -7,19 +7,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "arnaud.verstraeten@example.com",
-      href: "mailto:arnaud.verstraeten@example.com"
+      value: "arnaud.verstraeten@outlook.com",
+      href: "mailto:arnaud.verstraeten@outlook.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+32 485 85 81 66",
+      href: "tel:+32485858166"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Leuven, Belgium",
       href: null
     }
   ];
@@ -28,7 +28,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com"
+      href: "https://www.linkedin.com/in/arnaud-verstraeten-2677112bb"
     },
     {
       icon: Github,

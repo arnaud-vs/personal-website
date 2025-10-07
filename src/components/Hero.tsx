@@ -26,12 +26,12 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-          Senior Software Engineer & Full-Stack Developer
+          AI & Energy Systems Engineer
         </p>
         
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
-          Passionate about building elegant solutions to complex problems. 
-          Experienced in modern web technologies, cloud architecture, and agile methodologies.
+          Master's graduate in Artificial Intelligence and Energy Engineering from KU Leuven. 
+          Experienced in machine learning, energy systems optimization, and AI-driven solutions.
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center mb-12">
@@ -53,7 +53,7 @@ const Hero = () => {
         </div>
         
         <div className="flex gap-4 justify-center">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/arnaud-verstraeten-2677112bb" target="_blank" rel="noopener noreferrer">
             <Button size="icon" variant="ghost" className="hover:text-primary">
               <Linkedin className="h-5 w-5" />
             </Button>
@@ -63,7 +63,7 @@ const Hero = () => {
               <Github className="h-5 w-5" />
             </Button>
           </a>
-          <a href="mailto:arnaud@example.com">
+          <a href="mailto:arnaud.verstraeten@outlook.com">
             <Button size="icon" variant="ghost" className="hover:text-primary">
               <Mail className="h-5 w-5" />
             </Button>
