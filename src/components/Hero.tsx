@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          John Anderson
+          Arnaud Verstraeten
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-6">
@@ -63,7 +63,7 @@ const Hero = () => {
               <Github className="h-5 w-5" />
             </Button>
           </a>
-          <a href="mailto:john@example.com">
+          <a href="mailto:arnaud@example.com">
             <Button size="icon" variant="ghost" className="hover:text-primary">
               <Mail className="h-5 w-5" />
             </Button>
