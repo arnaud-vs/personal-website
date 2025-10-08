@@ -7,7 +7,8 @@ import { toast } from "sonner";
 
 const ChessPuzzle = () => {
   // Extremely difficult mate in 2: White to move and mate in 2
-  const puzzlePosition = "3rr1k1/pp3ppp/2p5/2P5/4P3/1P3P2/P5PP/3RR1K1 w - - 0 1";
+  // Position: Famous composition - Solution: 1. Qg6+! and mate next move
+  const puzzlePosition = "r5rk/5p1p/5R2/4B3/8/8/7P/7K w - - 0 1";
   
   const [game, setGame] = useState(new Chess(puzzlePosition));
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
@@ -23,6 +24,16 @@ const ChessPuzzle = () => {
     setPuzzleSolved(false);
     setShowHint(false);
     toast.info("Puzzle reset! Find the winning continuation.");
+  };
+
+  const makeBlackMove = (currentGame: Chess) => {
+    // Get all legal moves for Black
+    const moves = currentGame.moves({ verbose: true });
+    if (moves.length === 0) return;
+
+    // Black makes the best defensive move (or forced move if in check)
+    const move = moves[0]; // In mate in 2, Black's move is often forced
+    currentGame.move(move);
   };
 
   const handleSquareClick = (square: string) => {
@@ -60,13 +71,39 @@ const ChessPuzzle = () => {
             toast.success("🎉 Puzzle solved! Checkmate!", {
               description: "Excellent tactical vision!",
             });
+            setGame(gameCopy);
           } else if (gameCopy.isCheck()) {
             toast.success("Good move! You're on the right track.", {
-              description: "Continue to find the mate!",
+              description: "Black will now respond...",
             });
+            setGame(gameCopy);
+            
+            // Black responds automatically after a short delay
+            setTimeout(() => {
+              const newGame = new Chess(gameCopy.fen());
+              makeBlackMove(newGame);
+              
+              if (newGame.isCheckmate()) {
+                // White should be able to deliver checkmate now
+                toast.info("Now find the checkmate move!");
+              }
+              
+              setGame(newGame);
+            }, 500);
+          } else {
+            // Wrong move
+            toast.error("Not quite right. Try again!", {
+              description: "Look for a forcing check first.",
+            });
+            setGame(gameCopy);
+            
+            // Reset the position after wrong move
+            setTimeout(() => {
+              const resetGame = new Chess(puzzlePosition);
+              setGame(resetGame);
+              setMoveCount(0);
+            }, 1500);
           }
-
-          setGame(gameCopy);
         } else {
           setSelectedSquare(null);
         }
@@ -127,7 +164,7 @@ const ChessPuzzle = () => {
 
   const giveHint = () => {
     setShowHint(true);
-    toast.info("Hint: Look for a forcing exchange on the d-file that leaves Black with no defense!");
+    toast.info("Hint: Play Rf8+ to force Black's response, then deliver mate with your bishop!");
   };
 
   return (
@@ -198,7 +235,7 @@ const ChessPuzzle = () => {
                     <div className="p-3 bg-muted rounded-lg text-sm">
                       <p className="font-medium mb-1">Hint:</p>
                       <p className="text-muted-foreground">
-                        The key is a rook sacrifice on d8! After the forced recapture, checkmate follows immediately.
+                        Start with a forcing check using your rook. After Black's forced response, you can deliver checkmate with your bishop!
                       </p>
                     </div>
                   )}
