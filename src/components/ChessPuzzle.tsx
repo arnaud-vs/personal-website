@@ -6,8 +6,8 @@ import { RotateCcw, Trophy, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const ChessPuzzle = () => {
-  // Famous puzzle: White to move and win
-  const puzzlePosition = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 1";
+  // Extremely difficult mate in 2: White to move and mate in 2
+  const puzzlePosition = "3rr1k1/pp3ppp/2p5/2P5/4P3/1P3P2/P5PP/3RR1K1 w - - 0 1";
   
   const [game, setGame] = useState(new Chess(puzzlePosition));
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
@@ -127,7 +127,7 @@ const ChessPuzzle = () => {
 
   const giveHint = () => {
     setShowHint(true);
-    toast.info("Hint: Look for a powerful castling move that activates your pieces!");
+    toast.info("Hint: Look for a forcing exchange on the d-file that leaves Black with no defense!");
   };
 
   return (
@@ -136,7 +136,7 @@ const ChessPuzzle = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Chess Puzzle Challenge</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Test your tactical skills! White to move and win. Can you find the winning continuation?
+            An extremely difficult puzzle: White to move and mate in 2. Only the sharpest minds will solve this!
           </p>
         </div>
 
@@ -165,11 +165,11 @@ const ChessPuzzle = () => {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Difficulty:</span>
-                      <span className="font-medium">Intermediate</span>
+                      <span className="font-medium text-destructive">Extremely Difficult</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Theme:</span>
-                      <span className="font-medium">Tactical Attack</span>
+                      <span className="font-medium">Mate in 2</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Moves made:</span>
@@ -198,7 +198,7 @@ const ChessPuzzle = () => {
                     <div className="p-3 bg-muted rounded-lg text-sm">
                       <p className="font-medium mb-1">Hint:</p>
                       <p className="text-muted-foreground">
-                        Consider castling kingside (O-O) to bring your rook into the attack!
+                        The key is a rook sacrifice on d8! After the forced recapture, checkmate follows immediately.
                       </p>
                     </div>
                   )}
