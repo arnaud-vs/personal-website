@@ -11,12 +11,6 @@ const Contact = () => {
       href: "mailto:arnaud.verstraeten@outlook.com"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+32 485 85 81 66",
-      href: "tel:+32485858166"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Leuven, Belgium",
