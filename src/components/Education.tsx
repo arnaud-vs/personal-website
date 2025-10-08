@@ -7,19 +7,19 @@ const Education = () => {
       degree: "Master of Artificial Intelligence",
       school: "KU Leuven, Belgium",
       period: "2024 - 2025",
-      description: "Magna cum laude (84.3%)"
+      description: "Magna cum laude"
     },
     {
       degree: "Master of Engineering: Energy",
       school: "KU Leuven, Belgium",
       period: "2022 - 2024",
-      description: "Magna cum laude (77.2%) - Including exchange semester at École Polytechnique de Montréal"
+      description: "Magna cum laude - Including exchange semester at École Polytechnique de Montréal"
     },
     {
       degree: "Bachelor of Engineering: Electromechanics",
       school: "KU Leuven, Belgium",
       period: "2019 - 2022",
-      description: "Cum laude (69.9%)"
+      description: "Cum laude"
     }
   ];
 
