@@ -228,7 +228,7 @@ const ChessPuzzle = () => {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Difficulty:</span>
-                      <span className="font-medium text-destructive">Extremely Difficult</span>
+                      <span className="font-medium">Hard</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Theme:</span>
