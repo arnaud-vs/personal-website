@@ -199,7 +199,7 @@ const ChessPuzzle = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Chess Puzzle Challenge</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            An extremely difficult puzzle: White to move and mate in 2. Only the sharpest minds will solve this!
+            White to move, mate in two!
           </p>
         </div>
 
