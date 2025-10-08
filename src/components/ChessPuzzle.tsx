@@ -65,10 +65,10 @@ const ChessPuzzle = () => {
         if (move) {
           // Check if this is the first move and validate it's the correct one
           if (moveCount === 0) {
-            // The only correct first move is Rf8+ (rook from f6 to f8)
-            if (move.from !== 'f6' || move.to !== 'f8') {
+            // The only correct first move is Ra6+ (rook from f6 to a6)
+            if (move.from !== 'f6' || move.to !== 'a6') {
               toast.error("Wrong move! Try again.", {
-                description: "Only one move leads to mate in 2. Look for a forcing rook move!",
+                description: "Only one move leads to mate in 2. Look for a forcing rook check!",
               });
               setSelectedSquare(null);
               
