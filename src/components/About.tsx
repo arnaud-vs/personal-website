@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Code2, Palette, Rocket } from "lucide-react";
+import { Code2, Zap, BookOpen } from "lucide-react";
 
 const About = () => {
   const highlights = [
@@ -9,12 +9,12 @@ const About = () => {
       description: "Developing advanced forecasting models and AI solutions"
     },
     {
-      icon: Palette,
+      icon: Zap,
       title: "Energy Systems",
       description: "Optimizing energy consumption and renewable energy yield"
     },
     {
-      icon: Rocket,
+      icon: BookOpen,
       title: "Research",
       description: "Publishing findings at international conferences"
     }
