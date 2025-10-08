@@ -82,6 +82,25 @@ const ChessPuzzle = () => {
             }
           }
 
+          // Check if this is the second move (after Black's response)
+          if (moveCount === 1) {
+            // The only correct second move is Ra8# (rook from a6 to a8)
+            if (move.from !== 'a6' || move.to !== 'a8') {
+              toast.error("Wrong move! Try again.", {
+                description: "Look for checkmate with your rook!",
+              });
+              setSelectedSquare(null);
+              
+              // Reset the position after wrong move
+              setTimeout(() => {
+                const resetGame = new Chess(puzzlePosition);
+                setGame(resetGame);
+                setMoveCount(0);
+              }, 1500);
+              return;
+            }
+          }
+
           setMoveCount(moveCount + 1);
           setSelectedSquare(null);
 
@@ -110,7 +129,7 @@ const ChessPuzzle = () => {
               setGame(newGame);
             }, 500);
           } else {
-            // Wrong move (shouldn't reach here for first move due to check above)
+            // Wrong move
             toast.error("Not quite right. Try again!", {
               description: "Look for a forcing check first.",
             });
