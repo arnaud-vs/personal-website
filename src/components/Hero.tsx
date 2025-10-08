@@ -42,6 +42,12 @@ const Hero = () => {
           >
             View Experience
           </Button>
+          <Button 
+            size="lg" 
+            onClick={() => scrollToSection("chess-puzzle")}
+          >
+            Skip to Chess Puzzle
+          </Button>
         </div>
         
         <div className="flex gap-4 justify-center">
