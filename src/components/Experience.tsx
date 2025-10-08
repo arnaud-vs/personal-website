@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { FlaskConical, Brain, BarChart } from "lucide-react";
+import { Briefcase } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -7,22 +7,19 @@ const Experience = () => {
       title: "Researcher",
       company: "ELECTA, KU Leuven",
       period: "July - September 2025",
-      description: "Developed an imbalance price forecast based on machine learning. Presented research at the International Ruhr Energy Conference in Essen, Germany.",
-      icon: FlaskConical
+      description: "Developed an imbalance price forecast based on machine learning. Presented research at the International Ruhr Energy Conference in Essen, Germany."
     },
     {
       title: "AI Intern",
       company: "ENERSEE, Brussels",
       period: "August 2024",
-      description: "Leveraged generative AI to explain technical software output to energy managers. Improved machine learning algorithm calculating the energy yield of PV panels.",
-      icon: Brain
+      description: "Leveraged generative AI to explain technical software output to energy managers. Improved machine learning algorithm calculating the energy yield of PV panels."
     },
     {
       title: "BI Intern",
       company: "KATOEN NATIE, Antwerp",
       period: "August 2023",
-      description: "Created a business intelligence dashboard that summarizes customer satisfaction surveys for a multinational logistics company.",
-      icon: BarChart
+      description: "Created a business intelligence dashboard that summarizes customer satisfaction surveys for a multinational logistics company."
     }
   ];
 
@@ -41,7 +38,7 @@ const Experience = () => {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                      <exp.icon className="h-6 w-6" />
+                      <Briefcase className="h-6 w-6" />
                     </div>
                   </div>
                   <div className="flex-1">
