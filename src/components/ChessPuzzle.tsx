@@ -150,7 +150,13 @@ const ChessPuzzle = () => {
               ${isSelected ? 'ring-4 ring-primary ring-inset' : ''}
               ${piece && piece.color === game.turn() ? 'hover:opacity-80 cursor-pointer' : ''}
               ${!piece && selectedSquare ? 'hover:bg-primary/20' : ''}
+              ${piece?.color === 'w' ? 'text-white' : 'text-black'}
             `}
+            style={{
+              textShadow: piece?.color === 'w' 
+                ? '1px 1px 2px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8)' 
+                : '1px 1px 2px rgba(255,255,255,0.5), -1px -1px 2px rgba(255,255,255,0.5)'
+            }}
             disabled={puzzleSolved}
           >
             {getPieceSymbol(piece)}
