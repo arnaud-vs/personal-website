@@ -37,14 +37,6 @@ const Hero = () => {
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90"
-            onClick={() => scrollToSection("contact")}
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Get In Touch
-          </Button>
-          <Button 
-            size="lg" 
             variant="outline"
             onClick={() => scrollToSection("experience")}
           >
