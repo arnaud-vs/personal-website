@@ -45,7 +45,7 @@ const About = () => {
               <h3 className="text-2xl font-semibold mb-4">What I Do</h3>
               <p className="text-foreground/80 leading-relaxed">
                 My work focuses on applying machine learning and AI to solve real-world energy challenges. 
-                At ELECTA research group, I developed an imbalance price forecast that improved upon Elia's model by 13%, 
+                At ELECTA research group, I developed an imbalance price forecast 
                 and presented my research at the International Ruhr Energy Conference in Germany.
               </p>
             </CardContent>
