@@ -63,6 +63,25 @@ const ChessPuzzle = () => {
         });
 
         if (move) {
+          // Check if this is the first move and validate it's the correct one
+          if (moveCount === 0) {
+            // The only correct first move is Rf8+ (rook from f6 to f8)
+            if (move.from !== 'f6' || move.to !== 'f8') {
+              toast.error("Wrong move! Try again.", {
+                description: "Only one move leads to mate in 2. Look for a forcing rook move!",
+              });
+              setSelectedSquare(null);
+              
+              // Reset the position after wrong move
+              setTimeout(() => {
+                const resetGame = new Chess(puzzlePosition);
+                setGame(resetGame);
+                setMoveCount(0);
+              }, 1500);
+              return;
+            }
+          }
+
           setMoveCount(moveCount + 1);
           setSelectedSquare(null);
 
@@ -91,7 +110,7 @@ const ChessPuzzle = () => {
               setGame(newGame);
             }, 500);
           } else {
-            // Wrong move
+            // Wrong move (shouldn't reach here for first move due to check above)
             toast.error("Not quite right. Try again!", {
               description: "Look for a forcing check first.",
             });
