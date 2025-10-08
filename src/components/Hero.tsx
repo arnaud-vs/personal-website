@@ -50,7 +50,7 @@ const Hero = () => {
               <Linkedin className="h-5 w-5" />
             </Button>
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/arnaud-vs" target="_blank" rel="noopener noreferrer">
             <Button size="icon" variant="ghost" className="hover:text-primary">
               <Github className="h-5 w-5" />
             </Button>
