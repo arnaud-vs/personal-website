@@ -55,11 +55,6 @@ const Hero = () => {
               <Github className="h-5 w-5" />
             </Button>
           </a>
-          <a href="mailto:arnaud.verstraeten@outlook.com">
-            <Button size="icon" variant="ghost" className="hover:text-primary">
-              <Mail className="h-5 w-5" />
-            </Button>
-          </a>
         </div>
         
         <button
