@@ -34,7 +34,7 @@ const About = () => {
               <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
               <p className="text-foreground/80 leading-relaxed">
                 I'm an engineer with a unique blend of expertise in Artificial Intelligence and Energy Systems. 
-                I recently completed my Master's in AI at KU Leuven (Magna cum laude, 84.3%) after earning my 
+                I recently completed my Master's in AI at KU Leuven after earning my 
                 Master's in Energy Engineering, including an exchange semester at École Polytechnique de Montréal.
               </p>
             </CardContent>
