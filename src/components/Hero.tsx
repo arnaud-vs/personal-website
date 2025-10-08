@@ -46,7 +46,7 @@ const Hero = () => {
             size="lg" 
             onClick={() => scrollToSection("chess-puzzle")}
           >
-            Skip to Chess Puzzle
+            Chess Puzzle
           </Button>
         </div>
         
