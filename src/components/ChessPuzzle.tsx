@@ -145,7 +145,7 @@ const ChessPuzzle = () => {
             key={square}
             onClick={() => handleSquareClick(square)}
             className={`
-              aspect-square flex items-center justify-center text-2xl transition-all leading-none select-none
+              aspect-square flex items-center justify-center text-4xl transition-all leading-none select-none
               ${isLight ? 'bg-[#f0d9b5]' : 'bg-[#b58863]'}
               ${isSelected ? 'ring-4 ring-primary ring-inset' : ''}
               ${piece && piece.color === game.turn() ? 'hover:opacity-80 cursor-pointer' : ''}
