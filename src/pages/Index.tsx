@@ -18,9 +18,10 @@ const Index = () => {
       <ChessPuzzle />
       
       <footer className="py-6 px-4 border-t">
-        <p className="text-center text-sm text-muted-foreground">
-          © 2024 Arnaud Verstraeten. All rights reserved.
-        </p>
+        <div className="text-center text-sm text-muted-foreground">
+          <p>© 2024 Arnaud Verstraeten. All rights reserved.</p>
+          <p>Ondernemingsnummer: 1028.396.473</p>
+        </div>
       </footer>
     </div>
   );
