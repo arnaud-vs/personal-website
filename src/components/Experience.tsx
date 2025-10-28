@@ -4,6 +4,12 @@ import { Briefcase } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Head of Data Science",
+      company: "GRIDUAL, Leuven",
+      period: "October 2025 - now",
+      description: "Optimization of industrial battery systems to maximize profit and accelerate the energy transition."
+    },
+    {
       title: "Researcher",
       company: "ELECTA, KU Leuven",
       period: "July 2025 - now",
