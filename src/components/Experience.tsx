@@ -6,7 +6,7 @@ const Experience = () => {
     {
       title: "Researcher",
       company: "ELECTA, KU Leuven",
-      period: "July - September 2025",
+      period: "July 2025 - now",
       description: "Developed an imbalance price forecast based on machine learning. Presented research at the International Ruhr Energy Conference in Essen, Germany."
     },
     {
