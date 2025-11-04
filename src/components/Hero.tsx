@@ -17,6 +17,7 @@ const Hero = () => {
               src={profilePhoto}
               alt="Professional profile"
               className="relative w-52 h-52 rounded-full object-cover border-4 border-background shadow-lg"
+              style={{ imageRendering: '-webkit-optimize-contrast' }}
             />
           </div>
         </div>
