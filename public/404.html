@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Preserve path for analytics/back navigation if needed
+      (function(){
+        var redirectPath = location.pathname + location.search + location.hash;
+        sessionStorage.setItem('gh_pages_redirect', redirectPath);
+        location.replace('/');
+      })();
+    </script>
+    <style>
+      html,body{height:100%;margin:0}
+      body{display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:#444}
+    </style>
+  </head>
+  <body>
+    <p>Redirecting to home… <a href="/">Click here if not redirected</a>.</p>
+  </body>
+</html>
