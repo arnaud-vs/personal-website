@@ -1,0 +1,33 @@
+# Supabase free-tier projects auto-pause after about a week of inactivity, and a
+# paused project answers with a Cloudflare error page instead of JSON, which the
+# app surfaces as a parse error rather than anything diagnosable. One request
+# every few days counts as activity and keeps it awake.
+#
+# The endpoint is the bucketlist app's public join-preview function. It needs no
+# credentials, and an invalid id is fine — a 400 back still proves the project
+# answered, which is the whole point.
+
+name: Keep Supabase awake
+
+on:
+  schedule:
+    - cron: '17 6 */3 * *' # every 3 days, 06:17 UTC
+  workflow_dispatch: # so it can be run by hand from the Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the project
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 \
+            -X POST 'https://pwwmvqytwmeqdvjfjoih.supabase.co/functions/v1/peek' \
+            -H 'Content-Type: application/json' \
+            -d '{"id":"keepalive"}')
+          echo "peek returned HTTP $code"
+          # Any real HTTP answer means the project is awake. A 5xx from
+          # Cloudflare (521/522/523) means it is not.
+          case "$code" in
+            52*|000) echo "::error::Supabase looks paused or unreachable (HTTP $code)"; exit 1 ;;
+            *) echo "Project is awake." ;;
+          esac
