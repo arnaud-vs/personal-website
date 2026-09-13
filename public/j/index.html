@@ -1,0 +1,88 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Open your bucketlist</title>
+
+<!--
+  Invite landing page.
+
+  Why it exists: invites used to go out as bucketlist:///join/<id>#k=<key>.
+  Messaging apps only auto-linkify http(s) and a few known schemes, so a custom
+  scheme arrives as dead grey text — and even when tapped it does nothing at all
+  for someone who hasn't installed the app yet. This page is the https target
+  instead: tappable everywhere, and it gives non-users somewhere to land.
+
+  Link shape:  <this page>/?i=<list id>#k=<key>
+  The id is a query param so this works on any static host as a plain directory
+  index — no rewrite rule needed. The key stays in the fragment, which browsers
+  never put on the wire, so the server never sees it. That is the whole E2E
+  design, and it is why this page must stay static and dependency-free: any
+  analytics or third-party script here could read the key out of location.hash.
+  Do not add one.
+
+  Deploy: upload this file to <domain>/j/index.html over HTTPS. Nothing else.
+-->
+
+<style>
+  :root { --primary:#4A9ECC; --primary-dark:#2980B9; --text:#111; --muted:#888; --border:#e0e0e0; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         padding:24px; background:#fff; color:var(--text);
+         font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { width:100%; max-width:380px; text-align:center; }
+  h1 { font-size:26px; font-weight:600; margin:0 0 8px; }
+  p { color:var(--muted); margin:0 0 28px; }
+  a.btn, button.btn { display:block; width:100%; padding:16px; border-radius:10px; border:0;
+         font-size:16px; font-weight:500; text-decoration:none; cursor:pointer; margin-bottom:12px; }
+  .primary { background:var(--primary); color:#fff; }
+  .outline { background:#fff; color:var(--primary-dark); border:1px solid var(--border); }
+  .note { font-size:13px; color:#aaa; margin:20px 0 0; }
+  .hidden { display:none; }
+</style>
+
+<main>
+  <div id="ok" class="hidden">
+    <h1>Your friend made you a bucketlist</h1>
+    <p>Add your own ideas and see what you get together.</p>
+    <a class="btn primary" id="open">Open in the app</a>
+    <a class="btn outline" id="store">Get the app</a>
+    <p class="note">The key that unlocks this list is in the link itself and never leaves your phone.</p>
+  </div>
+
+  <div id="bad" class="hidden">
+    <h1>This link is incomplete</h1>
+    <p>Some apps cut long links short. Ask your friend to send it again, and copy the whole thing — including everything after the&nbsp;#.</p>
+  </div>
+</main>
+
+<script>
+  // Fill in once the app is live on the App Store.
+  var APP_STORE_URL = '';
+
+  var id  = new URLSearchParams(location.search).get('i');
+  var key = (location.hash.match(/(?:^|[#&])k=([^&]+)/) || [])[1];
+
+  if (id && key) {
+    // Rebuild the deep link the app already knows how to parse.
+    document.getElementById('open').href =
+      'bucketlist:///join/' + encodeURIComponent(id) + '#k=' + key;
+
+    var store = document.getElementById('store');
+    if (APP_STORE_URL) {
+      store.href = APP_STORE_URL;
+    } else {
+      store.textContent = 'Not on the App Store yet';
+      store.removeAttribute('href');
+      store.style.color = '#bbb';
+      store.style.cursor = 'default';
+    }
+    document.getElementById('ok').className = '';
+  } else {
+    document.getElementById('bad').className = '';
+  }
+
+  // No auto-redirect on purpose: firing the scheme when the app isn't installed
+  // shows an ugly "cannot open the page" dialog, and most people reaching this
+  // page are exactly the ones who don't have it yet.
+</script>
