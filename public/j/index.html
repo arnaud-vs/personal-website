@@ -66,9 +66,14 @@
   var key = (location.hash.match(/(?:^|[#&])k=([^&]+)/) || [])[1];
 
   if (id && key) {
-    // Rebuild the deep link the app already knows how to parse.
+    // The key rides in ?k= here, NOT in a fragment. This URL never touches a
+    // network: it is handed straight to the app on the same device, so a query
+    // param is exactly as private as a fragment and does not depend on the
+    // fragment surviving the browser -> app handoff, which is where it was
+    // getting lost. The https URL above still keeps the key in its fragment,
+    // which is what stops the web server ever seeing it.
     document.getElementById('open').href =
-      'bucketlist:///join/' + encodeURIComponent(id) + '#k=' + key;
+      'bucketlist:///join/' + encodeURIComponent(id) + '?k=' + encodeURIComponent(key);
 
     var store = document.getElementById('store');
     if (APP_STORE_URL) {
